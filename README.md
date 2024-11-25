@@ -40,17 +40,25 @@ python train.py
 ### Description
 
 Model: U-Net with Dropout layers.
+
 Loss Function: A custom loss function that combines L1 loss and SSIM loss.
+
 Optimizer: Adam optimizer with weight decay.
+
 Learning Rate Scheduler: StepLR with a step size of 10 and a gamma of 0.7.
+
 Early Stopping: Training will stop if there is no improvement in validation loss for 3 consecutive epochs.
 
 ### Hyperparameters
 
 batch_size: 64
+
 learning_rate: 0.001
+
 num_epochs: 30
+
 weight_decay: 1e-4
+
 patience: 3 (for early stopping)
 
 ## Testing
