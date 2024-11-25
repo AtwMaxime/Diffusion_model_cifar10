@@ -23,42 +23,46 @@ Ensure you have the following Python libraries installed:
 
 You can install the necessary dependencies using `pip`
 
-##Dataset
+## Dataset
+
 The model is trained on the CIFAR-10 dataset, which can be downloaded automatically during the data loading process. CIFAR-10 contains 60,000 32x32 color images in 10 classes, with 6,000 images per class.
 
-##Training
-###Training Script
+## Training
+
+### Training Script
+
 To train the model, run the following command:
 
-```bash
-python train.py
-```bash
 
-###Description
+python train.py
+
+
+### Description
+
 Model: U-Net with Dropout layers.
 Loss Function: A custom loss function that combines L1 loss and SSIM loss.
 Optimizer: Adam optimizer with weight decay.
 Learning Rate Scheduler: StepLR with a step size of 10 and a gamma of 0.7.
 Early Stopping: Training will stop if there is no improvement in validation loss for 3 consecutive epochs.
 
-###Hyperparameters
+### Hyperparameters
+
 batch_size: 64
 learning_rate: 0.001
 num_epochs: 30
 weight_decay: 1e-4
 patience: 3 (for early stopping)
 
-##Testing
-###Testing the Model
+## Testing
+
+### Testing the Model
+
 After training, you can test the model on a noisy image using the following command:
 
-```bash
 python generate.py --image_path path_to_image.png --model_path path_to_trained_model.pth
-```bash
 
-###Generate Random Image
+### Generate Random Image
+
 You can also generate a new image from random noise using the trained model with the following command:
 
-```bash
 python generate.py --generate_random
-```bash
